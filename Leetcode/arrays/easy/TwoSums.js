@@ -43,3 +43,21 @@ var twoSum = function (nums, target) {
   }
 };
 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ * This solution is with O(n) complexity
+ * Considering nums1 = target - nums2
+ */
+
+var twoSum = function(nums, target) {
+  let hashmap = {};
+  for(let i = 0; i < nums.length; i++) {
+      if (hashmap[target - nums[i]] != null) {
+          return [hashmap[target - nums[i]], i]
+      } else {
+          hashmap[nums[i]] = i;
+      }
+  }
+};
